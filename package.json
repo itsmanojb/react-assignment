@@ -22,7 +22,8 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "server:json": "json-server db.json --port 3001 --delay 2000",
-    "start": "concurrently \"npm run dev\" \"npm run server:json\" --kill-others"
+    "start": "concurrently \"npm run dev\" \"npm run server:json\" --kill-others",
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -35,6 +36,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
@@ -45,11 +50,18 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "json-server": "^0.17.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "react-router-dom": "^7.4.0",
+    "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
+    "util": "^0.12.5",
     "vite": "^6.2.0"
   }
 }
