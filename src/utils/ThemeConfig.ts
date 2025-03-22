@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Theme {
     appColors: any;
   }
@@ -29,13 +29,13 @@ export const theme = createTheme({
     fontSize: 13,
   },
   appColors: {
-    white: "#ffffff",
-    grey: "#fbfbfb",
+    white: '#ffffff',
+    grey: '#fbfbfb',
     blue: {
-      light: "#1e3fcd",
-      main: "#1333bb",
-      dark: "#1532ad",
+      light: '#1e3fcd',
+      main: '#1333bb',
+      dark: '#1532ad',
     },
-    pink: "#db3655",
+    pink: '#db3655',
   },
 });

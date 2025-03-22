@@ -1,13 +1,13 @@
-import { useUIContext } from "../contexts/UIContext";
+import { useUIContext } from '../contexts/UIContext';
 
 export default function UsersOverview() {
   const { showInfoPanel } = useUIContext();
   return (
     <div>
-      Dashboard page{" "}
+      Dashboard page{' '}
       <button type="button" onClick={() => showInfoPanel(true)}>
         Show
-      </button>{" "}
+      </button>{' '}
     </div>
   );
 }

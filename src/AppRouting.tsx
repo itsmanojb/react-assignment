@@ -1,9 +1,9 @@
-import { Navigate, Route, Routes } from "react-router";
-import AppLayout from "./components/AppLayout";
-import UsersOverview from "./pages/UsersOverview";
-import PageNotFound from "./pages/PageNotFound";
-import Login from "./pages/Login";
-import { SecureRoutes } from "./components/SecureRoutes";
+import { Navigate, Route, Routes } from 'react-router';
+import AppLayout from './components/AppLayout';
+import UsersOverview from './pages/UsersOverview';
+import PageNotFound from './pages/PageNotFound';
+import Login from './pages/Login';
+import { SecureRoutes } from './components/SecureRoutes';
 
 export default function AppRouting() {
   return (

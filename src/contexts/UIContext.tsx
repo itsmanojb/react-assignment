@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 interface AppState {
   infoPanelShown: boolean;
@@ -21,11 +21,7 @@ const UIContextProvider = ({ children }: { children: React.ReactNode }) => {
     infoPanelShown: infoPanel,
   };
 
-  return (
-    <UIContext.Provider value={{ ...state, showInfoPanel }}>
-      {children}
-    </UIContext.Provider>
-  );
+  return <UIContext.Provider value={{ ...state, showInfoPanel }}>{children}</UIContext.Provider>;
 };
 
 // Custom hook to access the context
