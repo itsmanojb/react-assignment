@@ -1,7 +1,7 @@
-import { BrowserRouter } from "react-router";
-import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./utils/ThemeConfig";
-import AppRouting from "./AppRouting";
+import { BrowserRouter } from 'react-router';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './utils/ThemeConfig';
+import AppRouting from './AppRouting';
 
 function App() {
   return (

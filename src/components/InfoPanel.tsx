@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Box, Drawer, IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { useState } from 'react';
+import { Box, Drawer, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 const panelWidth = 400;
 
@@ -12,12 +12,10 @@ export default function InfoPanel() {
       variant="temporary"
       anchor="right"
       open={open}
-      onClose={() => {}}>
-      <Box sx={{ justifyContent: "flex-end", display: "flex", padding: 2 }}>
-        <IconButton
-          aria-label="close panel"
-          size="small"
-          onClick={() => setOpen(false)}>
+      onClose={() => {}}
+    >
+      <Box sx={{ justifyContent: 'flex-end', display: 'flex', padding: 2 }}>
+        <IconButton aria-label="close panel" size="small" onClick={() => setOpen(false)}>
           <CloseIcon fontSize="inherit" />
         </IconButton>
       </Box>
