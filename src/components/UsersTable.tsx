@@ -20,7 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import InputBase from '@mui/material/InputBase';
 import useFetch from '../hooks/useFetch';
-import { useUIContext } from '../contexts/UIContext';
+import { useAppContext } from '../contexts/AppContext';
 import { User } from '../types/User';
 
 const Search = styled('div')(({ theme }) => ({
@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function UsersTable() {
-  const { showInfoPanel } = useUIContext();
+  const { selectUser } = useAppContext();
 
   const { data, loading, error } = useFetch('users');
 
@@ -140,7 +140,7 @@ export default function UsersTable() {
                   <IconButton
                     aria-label="edit"
                     color="inherit"
-                    onClick={() => showInfoPanel(true)}
+                    onClick={() => selectUser(user)}
                   >
                     <ModeEditOutlinedIcon />
                   </IconButton>

@@ -1,16 +1,16 @@
 import { BrowserRouter } from 'react-router';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from './utils/ThemeConfig';
-import { UIContextProvider } from './contexts/UIContext';
+import { AppContextProvider } from './contexts/AppContext';
 import AppRouting from './AppRouting';
 
 function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <AppRouting />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>
     </BrowserRouter>
   );
