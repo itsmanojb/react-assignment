@@ -1,8 +1,19 @@
 {
   "name": "react-assignment",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": {
+    "name": "Manoj Barman",
+    "url": "https://manojbarman.in"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "mui",
+    "emotion"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
