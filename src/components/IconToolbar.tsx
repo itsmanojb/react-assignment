@@ -1,33 +1,33 @@
-import { Box, styled, Toolbar } from "@mui/material";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import List from "@mui/material/List";
-import MapsHomeWorkOutlinedIcon from "@mui/icons-material/MapsHomeWorkOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import AppSettingsAltOutlinedIcon from "@mui/icons-material/AppSettingsAltOutlined";
-import RequestPageOutlinedIcon from "@mui/icons-material/RequestPageOutlined";
-import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
-import LibraryAddCheckOutlinedIcon from "@mui/icons-material/LibraryAddCheckOutlined";
-import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
-import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
-import AccordionMenus from "./AccordionMenus";
+import { Box, styled, Toolbar } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import List from '@mui/material/List';
+import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import AppSettingsAltOutlinedIcon from '@mui/icons-material/AppSettingsAltOutlined';
+import RequestPageOutlinedIcon from '@mui/icons-material/RequestPageOutlined';
+import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
+import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
+import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
+import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
+import PhoneIphoneOutlinedIcon from '@mui/icons-material/PhoneIphoneOutlined';
+import AccordionMenus from './AccordionMenus';
 
 const IconButton = styled(ListItemButton)(({ theme }) => ({
-  display: "inline-flex",
+  display: 'inline-flex',
   padding: theme.spacing(1, 0),
   borderRadius: theme.shape.borderRadius,
 }));
 
-const ExpendedMenuDrawer = styled("div")(({ theme }) => ({
-  display: "flex",
+const ExpendedMenuDrawer = styled('div')(({ theme }) => ({
+  display: 'flex',
   flex: 1,
   padding: theme.spacing(1, 0),
-  borderInlineStart: "1px solid",
+  borderInlineStart: '1px solid',
   borderColor: theme.palette.divider,
 }));
 
@@ -40,72 +40,72 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
   const NavMenus = [
     {
       icon: <MapsHomeWorkOutlinedIcon />,
-      label: "My Organization",
-      tooltip: "",
-      link: "#",
+      label: 'My Organization',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <HomeOutlinedIcon />,
-      label: "Home",
-      tooltip: "",
-      link: "#",
+      label: 'Home',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <DescriptionOutlinedIcon />,
-      label: "Documents",
-      tooltip: "",
-      link: "#",
+      label: 'Documents',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <AppSettingsAltOutlinedIcon />,
-      label: "App Settings",
-      tooltip: "",
-      link: "#",
+      label: 'App Settings',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <RequestPageOutlinedIcon />,
-      label: "Expenses",
-      tooltip: "",
-      link: "#",
+      label: 'Expenses',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <AssessmentOutlinedIcon />,
-      label: "Assessments",
-      tooltip: "",
-      link: "#",
+      label: 'Assessments',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <FileCopyOutlinedIcon />,
-      label: "Reports",
-      tooltip: "",
-      link: "#",
+      label: 'Reports',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <LibraryAddCheckOutlinedIcon />,
-      label: "Approvals",
-      tooltip: "",
-      link: "#",
+      label: 'Approvals',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <WarningAmberOutlinedIcon />,
-      label: "Errors",
-      tooltip: "",
-      link: "#",
+      label: 'Errors',
+      tooltip: '',
+      link: '#',
     },
     {
       icon: <TimelineOutlinedIcon />,
-      label: "Analysis",
-      tooltip: "",
-      link: "#",
+      label: 'Analysis',
+      tooltip: '',
+      link: '#',
     },
   ];
 
   const UserMenus = [
     {
       icon: <PhoneIphoneOutlinedIcon />,
-      label: "My App",
-      tooltip: "",
-      link: "#",
+      label: 'My App',
+      tooltip: '',
+      link: '#',
     },
   ];
 
@@ -114,39 +114,34 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
       <Toolbar />
       <Box
         sx={{
-          display: "flex",
+          display: 'flex',
           backgroundColor: (theme) => theme.appColors.grey,
-          height: "100%",
-        }}>
+          height: '100%',
+        }}
+      >
         <Box
           sx={{
-            overflowY: "auto",
+            overflowY: 'auto',
             paddingInline: 0.5,
-            display: "flex",
-            flexDirection: "column",
-          }}>
-          <List sx={{ display: "grid", rowGap: 2, paddingBlock: 2 }}>
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <List sx={{ display: 'grid', rowGap: 2, paddingBlock: 2 }}>
             {NavMenus.map((menu, index) => (
               <ListItem key={index} disablePadding>
-                <IconButton onClick={() => onDrawerToggle("show")}>
-                  <ListItemIcon sx={{ justifyContent: "center" }}>
-                    {menu.icon}
-                  </ListItemIcon>
+                <IconButton onClick={() => onDrawerToggle('show')}>
+                  <ListItemIcon sx={{ justifyContent: 'center' }}>{menu.icon}</ListItemIcon>
                 </IconButton>
               </ListItem>
             ))}
           </List>
-          <Divider style={{ marginBlockStart: "auto" }} />
+          <Divider style={{ marginBlockStart: 'auto' }} />
           <List>
             {UserMenus.map((menu, index) => (
-              <ListItem
-                key={index}
-                disablePadding
-                onClick={() => onDrawerToggle("show")}>
+              <ListItem key={index} disablePadding onClick={() => onDrawerToggle('show')}>
                 <IconButton>
-                  <ListItemIcon sx={{ justifyContent: "center" }}>
-                    {menu.icon}
-                  </ListItemIcon>
+                  <ListItemIcon sx={{ justifyContent: 'center' }}>{menu.icon}</ListItemIcon>
                 </IconButton>
               </ListItem>
             ))}
