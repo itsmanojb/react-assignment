@@ -1,3 +1,3 @@
 export default function Dashboard() {
-  return <div>Dashboard page</div>;
+  return <div data-testid="dash-board">Dashboard page</div>;
 }
