@@ -37,5 +37,6 @@ export const theme = createTheme({
       dark: '#1532ad',
     },
     pink: '#db3655',
+    teal: '#52bca6',
   },
 });

@@ -55,7 +55,12 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit" variant="contained" disableElevation fullWidth>
+            <Button
+              type="submit"
+              variant="contained"
+              disableElevation
+              fullWidth
+            >
               {submitted ? 'Logging in...' : 'Login'}
             </Button>
           </Box>

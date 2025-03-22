@@ -15,8 +15,7 @@ const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'flex',
   borderRadius: theme.shape.borderRadius * 2.5,
-  border: '1px solid',
-  borderColor: alpha(theme.palette.divider, 0.15),
+  border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
   width: '100%',
   minWidth: 500,
 }));
@@ -70,7 +69,11 @@ export default function AppNavBar() {
                 <SearchIcon />
               </SearchIconWrapper>
             </Search>
-            <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+            <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>

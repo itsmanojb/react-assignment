@@ -15,7 +15,11 @@ export default function InfoPanel() {
       onClose={() => {}}
     >
       <Box sx={{ justifyContent: 'flex-end', display: 'flex', padding: 2 }}>
-        <IconButton aria-label="close panel" size="small" onClick={() => showInfoPanel(false)}>
+        <IconButton
+          aria-label="close panel"
+          size="small"
+          onClick={() => showInfoPanel(false)}
+        >
           <CloseIcon fontSize="inherit" />
         </IconButton>
       </Box>

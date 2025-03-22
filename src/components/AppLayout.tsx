@@ -31,19 +31,30 @@ export default function AppLayout() {
         <Drawer
           variant="permanent"
           sx={{
-            width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
+            width: drawerOpened
+              ? `${iconDrawerExpandedWidth}px`
+              : iconDrawerWidth,
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: {
-              width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
+              width: drawerOpened
+                ? `${iconDrawerExpandedWidth}px`
+                : iconDrawerWidth,
             },
           }}
         >
-          <IconToolbar drawer={drawerOpened} onDrawerToggle={(arg) => handleDrawerToggle(arg)} />
+          <IconToolbar
+            drawer={drawerOpened}
+            onDrawerToggle={(arg) => handleDrawerToggle(arg)}
+          />
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1 }}>
           <Toolbar />
           <Box
-            paddingInlineStart={drawerOpened ? `${iconDrawerExpandedWidth - iconDrawerWidth}px` : 0}
+            paddingInlineStart={
+              drawerOpened
+                ? `${iconDrawerExpandedWidth - iconDrawerWidth}px`
+                : 0
+            }
           >
             <Outlet />
           </Box>
