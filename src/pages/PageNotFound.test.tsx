@@ -1,5 +1,5 @@
 import PageNotFound from './PageNotFound';
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 
 describe('PageNotFound Component', () => {
   it('should display `Page Not Found`', () => {
