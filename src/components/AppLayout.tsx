@@ -31,14 +31,10 @@ export default function AppLayout() {
         <Drawer
           variant="permanent"
           sx={{
-            width: drawerOpened
-              ? `${iconDrawerExpandedWidth}px`
-              : iconDrawerWidth,
+            width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: {
-              width: drawerOpened
-                ? `${iconDrawerExpandedWidth}px`
-                : iconDrawerWidth,
+              width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
             },
           }}
         >
