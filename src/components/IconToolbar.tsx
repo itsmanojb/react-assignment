@@ -33,7 +33,7 @@ const ExpendedMenuDrawer = styled("div")(({ theme }) => ({
 
 type Props = {
   drawer: boolean;
-  onDrawerToggle: (arg: string) => void;
+  onDrawerToggle: (menuIdx: number) => void;
 };
 
 export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
@@ -128,7 +128,7 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
           <List sx={{ display: "grid", rowGap: 2, paddingBlock: 2 }}>
             {NavMenus.map((menu, index) => (
               <ListItem key={index} disablePadding>
-                <IconButton onClick={() => onDrawerToggle("show")}>
+                <IconButton onClick={() => onDrawerToggle(index)}>
                   <ListItemIcon sx={{ justifyContent: "center" }}>
                     {menu.icon}
                   </ListItemIcon>
@@ -142,7 +142,7 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
               <ListItem
                 key={index}
                 disablePadding
-                onClick={() => onDrawerToggle("show")}>
+                onClick={() => onDrawerToggle(1)}>
                 <IconButton>
                   <ListItemIcon sx={{ justifyContent: "center" }}>
                     {menu.icon}

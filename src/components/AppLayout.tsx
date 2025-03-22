@@ -16,13 +16,11 @@ export default function AppLayout() {
   const [drawerOpened, setDrawerOpened] = useState(false);
 
   useEffect(() => {
-    // runs on location, i.e. route, change
-    console.log("handle route change here", location);
     setDrawerOpened(false);
   }, [location]);
 
-  function handleDrawerToggle(arg: string) {
-    setDrawerOpened(() => arg === "show");
+  function handleDrawerToggle(idx: number) {
+    setDrawerOpened(() => idx === 0);
   }
 
   return (
