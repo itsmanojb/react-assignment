@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Outlet } from "react-router";
+import { useEffect, useState } from "react";
+import { Outlet, useLocation } from "react-router";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,9 +10,16 @@ import InfoPanel from "./InfoPanel";
 import { AppConfig } from "../utils/AppConfig";
 
 export default function AppLayout() {
+  const { iconDrawerWidth, iconDrawerExpandedWidth } = AppConfig;
+
+  const location = useLocation();
   const [drawerOpened, setDrawerOpened] = useState(false);
 
-  const { iconDrawerWidth, iconDrawerExpandedWidth } = AppConfig;
+  useEffect(() => {
+    // runs on location, i.e. route, change
+    console.log("handle route change here", location);
+    setDrawerOpened(false);
+  }, [location]);
 
   function handleDrawerToggle(arg: string) {
     setDrawerOpened(() => arg === "show");

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { Box, styled } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -5,7 +6,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const MenuButton = styled("a")(({ theme }) => ({
+const MenuButton = styled(NavLink)(({ theme }) => ({
   padding: theme.spacing(1.5, 2),
   display: "flex",
   alignItems: "center",
@@ -23,19 +24,16 @@ const MenuButton = styled("a")(({ theme }) => ({
 export default function AccordionMenus() {
   const uLinks = [
     {
-      label: "User overview",
-      active: true,
-      link: "#",
+      label: "Users overview",
+      link: "users-overview",
     },
     {
       label: "Departments",
-      active: false,
-      link: "#",
+      link: "departments",
     },
     {
       label: "Key templates",
-      active: false,
-      link: "#",
+      link: "key-templates",
     },
   ];
   return (
@@ -90,7 +88,7 @@ export default function AccordionMenus() {
               {uLinks.map((item, i) => (
                 <MenuButton
                   key={i}
-                  href={item.link}
+                  to={item.link}
                   className={item.active ? "active" : ""}>
                   {item.label}
                 </MenuButton>
