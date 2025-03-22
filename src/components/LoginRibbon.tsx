@@ -31,7 +31,9 @@ export default function LoginRibbon() {
       }}
     >
       <Ribbon />
-      <LoginInfo>Logged in as</LoginInfo>
+      <LoginInfo>
+        Logged in as : <span>User_NAME</span>{' '}
+      </LoginInfo>
     </Box>
   );
 }

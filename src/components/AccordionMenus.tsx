@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router';
 import { Box, styled } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -5,7 +6,17 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const MenuButton = styled('a')(({ theme }) => ({
+
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import RestorePageOutlinedIcon from '@mui/icons-material/RestorePageOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
+
+const MenuButton = styled(NavLink)(({ theme }) => ({
   padding: theme.spacing(1.5, 2),
   display: 'flex',
   alignItems: 'center',
@@ -23,19 +34,16 @@ const MenuButton = styled('a')(({ theme }) => ({
 export default function AccordionMenus() {
   const uLinks = [
     {
-      label: 'User overview',
-      active: true,
-      link: '#',
+      label: 'Users overview',
+      link: 'users-overview',
     },
     {
       label: 'Departments',
-      active: false,
-      link: '#',
+      link: 'departments',
     },
     {
       label: 'Key templates',
-      active: false,
-      link: '#',
+      link: 'key-templates',
     },
   ];
   return (
@@ -68,7 +76,10 @@ export default function AccordionMenus() {
             }}
           >
             <AccordionSummary style={{ paddingInline: 0 }}>
-              <Typography component="span">Overview</Typography>
+              <DashboardOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Overview
+              </Typography>
             </AccordionSummary>
           </Accordion>
           <Accordion
@@ -86,7 +97,10 @@ export default function AccordionMenus() {
               aria-controls="panel1-content"
               id="panel1-header"
             >
-              <Typography component="span">Users</Typography>
+              <PeopleAltOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Users
+              </Typography>
             </AccordionSummary>
             <AccordionDetails
               sx={(theme) => ({
@@ -94,7 +108,7 @@ export default function AccordionMenus() {
               })}
             >
               {uLinks.map((item, i) => (
-                <MenuButton key={i} href={item.link} className={item.active ? 'active' : ''}>
+                <MenuButton key={i} to={item.link}>
                   {item.label}
                 </MenuButton>
               ))}
@@ -109,7 +123,10 @@ export default function AccordionMenus() {
             }}
           >
             <AccordionSummary style={{ paddingInline: 0 }}>
-              <Typography component="span">Order &amp; Change History</Typography>
+              <FileCopyOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Order &amp; Change History
+              </Typography>
             </AccordionSummary>
           </Accordion>
           <Accordion
@@ -121,7 +138,10 @@ export default function AccordionMenus() {
             }}
           >
             <AccordionSummary style={{ paddingInline: 0 }}>
-              <Typography component="span">Multi-change Status</Typography>
+              <RestorePageOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Multi-change Status
+              </Typography>
             </AccordionSummary>
           </Accordion>
           <Accordion
@@ -135,18 +155,19 @@ export default function AccordionMenus() {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               style={{ paddingInline: 0 }}
-              aria-controls="panel2-content"
-              id="panel2-header"
+              aria-controls="panel3-content"
+              id="panel3-header"
             >
-              <Typography component="span">Kaldsflow</Typography>
+              <AccountTreeOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Kaldsflow
+              </Typography>
             </AccordionSummary>
             <AccordionDetails
               sx={(theme) => ({
                 borderInlineStart: `1px solid ${theme.palette.divider}`,
               })}
-            >
-              // Kaldsflow content
-            </AccordionDetails>
+            ></AccordionDetails>
           </Accordion>
           <Accordion
             sx={{
@@ -159,18 +180,20 @@ export default function AccordionMenus() {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               style={{ paddingInline: 0 }}
-              aria-controls="panel2-content"
-              id="panel2-header"
+
+              aria-controls="panel4-content"
+              id="panel4-header"
             >
-              <Typography component="span">Number Overview</Typography>
+              <ManageAccountsOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Number Overview
+              </Typography>
             </AccordionSummary>
             <AccordionDetails
               sx={(theme) => ({
                 borderInlineStart: `1px solid ${theme.palette.divider}`,
               })}
-            >
-              // Number Overview content
-            </AccordionDetails>
+            ></AccordionDetails>
           </Accordion>
           <Accordion
             sx={{
@@ -181,7 +204,10 @@ export default function AccordionMenus() {
             }}
           >
             <AccordionSummary style={{ paddingInline: 0 }}>
-              <Typography component="span">Time Management</Typography>
+              <AccessTimeOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Time Management
+              </Typography>
             </AccordionSummary>
           </Accordion>
           <Accordion
@@ -193,7 +219,10 @@ export default function AccordionMenus() {
             }}
           >
             <AccordionSummary style={{ paddingInline: 0 }}>
-              <Typography component="span">Licenses</Typography>
+              <VerifiedOutlinedIcon />
+              <Typography component="span" marginInlineStart={2}>
+                Licenses
+              </Typography>
             </AccordionSummary>
           </Accordion>
         </AccordionDetails>

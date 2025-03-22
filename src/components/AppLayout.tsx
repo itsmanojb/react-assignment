@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router';
+import { useEffect, useState } from 'react';
+import { Outlet, useLocation } from 'react-router';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,12 +10,17 @@ import InfoPanel from './InfoPanel';
 import { AppConfig } from '../utils/AppConfig';
 
 export default function AppLayout() {
-  const [drawerOpened, setDrawerOpened] = useState(false);
-
   const { iconDrawerWidth, iconDrawerExpandedWidth } = AppConfig;
 
-  function handleDrawerToggle(arg: string) {
-    setDrawerOpened(() => arg === 'show');
+  const location = useLocation();
+  const [drawerOpened, setDrawerOpened] = useState(false);
+
+  useEffect(() => {
+    setDrawerOpened(false);
+  }, [location]);
+
+  function handleDrawerToggle(idx: number) {
+    setDrawerOpened(() => idx === 0);
   }
 
   return (
@@ -33,12 +38,19 @@ export default function AppLayout() {
             },
           }}
         >
-          <IconToolbar drawer={drawerOpened} onDrawerToggle={(arg) => handleDrawerToggle(arg)} />
+          <IconToolbar
+            drawer={drawerOpened}
+            onDrawerToggle={(arg) => handleDrawerToggle(arg)}
+          />
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1 }}>
           <Toolbar />
           <Box
-            paddingInlineStart={drawerOpened ? `${iconDrawerExpandedWidth - iconDrawerWidth}px` : 0}
+            paddingInlineStart={
+              drawerOpened
+                ? `${iconDrawerExpandedWidth - iconDrawerWidth}px`
+                : 0
+            }
           >
             <Outlet />
           </Box>

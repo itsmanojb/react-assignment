@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Box, styled, Toolbar } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -19,8 +20,11 @@ import AccordionMenus from './AccordionMenus';
 
 const IconButton = styled(ListItemButton)(({ theme }) => ({
   display: 'inline-flex',
-  padding: theme.spacing(1, 0),
+  padding: theme.spacing(1.5, 0),
   borderRadius: theme.shape.borderRadius,
+  '&.current': {
+    backgroundColor: theme.appColors.teal,
+  },
 }));
 
 const ExpendedMenuDrawer = styled('div')(({ theme }) => ({
@@ -33,10 +37,11 @@ const ExpendedMenuDrawer = styled('div')(({ theme }) => ({
 
 type Props = {
   drawer: boolean;
-  onDrawerToggle: (arg: string) => void;
+  onDrawerToggle: (menuIdx: number) => void;
 };
 
 export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
+  const [activeMenuIndex, setActiveMenuIndex] = useState(0);
   const NavMenus = [
     {
       icon: <MapsHomeWorkOutlinedIcon />,
@@ -109,6 +114,11 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
     },
   ];
 
+  function handleMenuClick(index: number) {
+    setActiveMenuIndex(index);
+    onDrawerToggle(index);
+  }
+
   return (
     <>
       <Toolbar />
@@ -127,11 +137,16 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
             flexDirection: 'column',
           }}
         >
-          <List sx={{ display: 'grid', rowGap: 2, paddingBlock: 2 }}>
+          <List sx={{ display: 'grid', rowGap: 1, paddingBlock: 2 }}>
             {NavMenus.map((menu, index) => (
               <ListItem key={index} disablePadding>
-                <IconButton onClick={() => onDrawerToggle('show')}>
-                  <ListItemIcon sx={{ justifyContent: 'center' }}>{menu.icon}</ListItemIcon>
+                <IconButton
+                  className={activeMenuIndex === index ? 'current' : ''}
+                  onClick={() => handleMenuClick(index)}
+                >
+                  <ListItemIcon sx={{ justifyContent: 'center' }}>
+                    {menu.icon}
+                  </ListItemIcon>
                 </IconButton>
               </ListItem>
             ))}
@@ -139,9 +154,15 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
           <Divider style={{ marginBlockStart: 'auto' }} />
           <List>
             {UserMenus.map((menu, index) => (
-              <ListItem key={index} disablePadding onClick={() => onDrawerToggle('show')}>
+              <ListItem
+                key={index}
+                disablePadding
+                onClick={() => handleMenuClick(-1)}
+              >
                 <IconButton>
-                  <ListItemIcon sx={{ justifyContent: 'center' }}>{menu.icon}</ListItemIcon>
+                  <ListItemIcon sx={{ justifyContent: 'center' }}>
+                    {menu.icon}
+                  </ListItemIcon>
                 </IconButton>
               </ListItem>
             ))}
