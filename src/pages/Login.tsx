@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { doFakeLogin } from '../lib/Authentication';
 import { useNavigate } from 'react-router';
+import { LoginResponse } from '../types/Login';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -21,14 +22,16 @@ export default function Login() {
 
   localStorage.removeItem('token');
 
-  const handleSubmit = async (event: SubmitEvent) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
 
     if (submitted) return;
 
     setSubmitted(true);
     try {
-      const response = await doFakeLogin(email, password);
+      const response: LoginResponse = await doFakeLogin(email, password);
       localStorage.setItem('token', response?.token);
       navigate('/app');
     } catch (error) {

@@ -1,56 +1,27 @@
 import {
-  alpha,
   Box,
   Button,
   CircularProgress,
   Container,
   IconButton,
-  styled,
-  Theme,
 } from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ViewWeekOutlinedIcon from '@mui/icons-material/ViewWeekOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
-import SearchIcon from '@mui/icons-material/Search';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import InputBase from '@mui/material/InputBase';
 import useFetch from '../hooks/useFetch';
 import useAppContext from '../hooks/useAppContext';
 import { User } from '../types/User';
 import { useTranslation } from 'react-i18next';
+import SearchField from './Search';
+import { IconPosition } from '../types/Common';
 import '../i18n';
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
-  margin: theme.spacing(0, 2, 0, -2),
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  width: '100%',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-  },
-}));
 
 export default function UsersTable() {
   const { t } = useTranslation();
@@ -86,15 +57,12 @@ export default function UsersTable() {
           marginBlockStart: 4,
         }}
       >
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
+        <Box sx={{ maxWidth: 300, marginInlineStart: -2, marginInlineEnd: 2 }}>
+          <SearchField
+            placeholder={t('input_placeholder__search')}
+            iconPosition={IconPosition.START}
           />
-        </Search>
+        </Box>
         <Box sx={{ display: 'flex', columnGap: 2, flex: 1 }}>
           <Button color="inherit" startIcon={<FilterAltOutlinedIcon />}>
             Filter
@@ -107,7 +75,8 @@ export default function UsersTable() {
             variant="contained"
             sx={{
               marginInlineStart: 'auto',
-              backgroundColor: (theme: Theme) => theme.appColors.blue.main,
+              backgroundColor: (theme) => theme.appColors.blue.main,
+              color: (theme) => theme.palette.common.white,
             }}
           >
             {t('btn__create_user')}

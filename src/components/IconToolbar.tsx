@@ -31,8 +31,8 @@ const ExpendedMenuDrawer = styled('div')(({ theme }) => ({
   display: 'flex',
   flex: 1,
   padding: theme.spacing(1, 0),
-  borderInlineStart: '1px solid',
-  borderColor: theme.palette.divider,
+  borderInlineStart: `1px solid ${theme.palette.divider}`,
+  overflowY: 'auto',
 }));
 
 type Props = {
@@ -126,15 +126,18 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
         sx={{
           display: 'flex',
           backgroundColor: (theme) => theme.palette.background.default,
+          overflow: 'hidden',
           height: '100%',
         }}
       >
         <Box
           sx={{
-            overflowY: 'auto',
             paddingInline: 0.5,
             display: 'flex',
             flexDirection: 'column',
+            height: '100%',
+            overflowY: 'auto',
+            overflowX: 'hidden',
           }}
         >
           <List sx={{ display: 'grid', rowGap: 1, paddingBlock: 2 }}>

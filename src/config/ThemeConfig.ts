@@ -2,7 +2,6 @@
 
 declare module '@mui/material/styles' {
   interface Theme {
-    //appColors: any;
     appColors: {
       blue: {
         light: string;
@@ -14,7 +13,6 @@ declare module '@mui/material/styles' {
     };
   }
   interface ThemeOptions {
-    //appColors?: any;
     appColors?: {
       blue?: {
         light?: string;

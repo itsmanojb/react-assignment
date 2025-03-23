@@ -6,6 +6,7 @@ import en from './locales/en.json';
 import es from './locales/es.json';
 import fr from './locales/fr.json';
 import hi from './locales/hi.json';
+import da from './locales/da.json';
 
 i18n
   .use(LanguageDetector)
@@ -16,6 +17,7 @@ i18n
       es: { translation: es },
       fr: { translation: fr },
       hi: { translation: hi },
+      da: { translation: da },
     },
     fallbackLng: 'en',
     debug: true,
