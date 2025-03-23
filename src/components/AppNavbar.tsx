@@ -1,20 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import { styled, alpha } from '@mui/material/styles';
+//import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
+//import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+//import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LoginRibbon from './LoginRibbon';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import SearchField from './Search';
+import { IconPosition } from '../types/Common';
 
-const Search = styled('div')(({ theme }) => ({
+/* const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'flex',
   borderRadius: theme.shape.borderRadius * 2.5,
@@ -38,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     padding: theme.spacing(0, 2),
   },
-}));
+})); */
 
 export default function AppNavBar() {
   const { t } = useTranslation();
@@ -65,7 +67,7 @@ export default function AppNavBar() {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: 'flex', columnGap: 1 }}>
-            <Search>
+            {/* <Search>
               <StyledInputBase
                 placeholder={t('ph_text__top_search')}
                 inputProps={{ 'aria-label': 'search' }}
@@ -73,7 +75,11 @@ export default function AppNavBar() {
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
-            </Search>
+            </Search> */}
+            <SearchField
+              placeholder={t('ph_text__top_search')}
+              iconPosition={IconPosition.END}
+            />
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

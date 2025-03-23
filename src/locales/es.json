@@ -29,5 +29,6 @@
   "table_col__uname_pass": "Nombre de usuario, Contraseña",
   "lbl_infopanel__user_info": "Información del usuario",
   "lbl_infopanel__login_info": "Información de inicio de sesión",
-  "lbl_page__not_found": "Página no encontrada"
+  "lbl_page__not_found": "Página no encontrada",
+   "input_placeholder__search": "Buscar"
 }

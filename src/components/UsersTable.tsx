@@ -1,31 +1,29 @@
 import {
-  alpha,
   Box,
   Button,
   CircularProgress,
   Container,
   IconButton,
-  styled,
 } from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ViewWeekOutlinedIcon from '@mui/icons-material/ViewWeekOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
-import SearchIcon from '@mui/icons-material/Search';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import InputBase from '@mui/material/InputBase';
 import useFetch from '../hooks/useFetch';
 import useAppContext from '../hooks/useAppContext';
 import { User } from '../types/User';
 import { useTranslation } from 'react-i18next';
 import '../i18n';
+import SearchField from './Search';
+import { IconPosition } from '../types/Common';
 
-const Search = styled('div')(({ theme }) => ({
+/* const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
@@ -49,7 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
   },
-}));
+})); */
 
 export default function UsersTable() {
   const { t } = useTranslation();
@@ -85,15 +83,10 @@ export default function UsersTable() {
           marginBlockStart: 4,
         }}
       >
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
+        <SearchField
+          placeholder={t('input_placeholder__search')}
+          iconPosition={IconPosition.START}
+        />
         <Box sx={{ display: 'flex', columnGap: 2, flex: 1 }}>
           <Button color="inherit" startIcon={<FilterAltOutlinedIcon />}>
             Filter

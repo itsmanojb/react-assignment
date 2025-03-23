@@ -29,5 +29,6 @@
   "table_col__uname_pass": "Address",
   "lbl_infopanel__user_info": "User Information",
   "lbl_infopanel__login_info": "Login Information",
-  "lbl_page__not_found": "Page Not Found"
+  "lbl_page__not_found": "Page Not Found",
+  "input_placeholder__search": "Search"
 }

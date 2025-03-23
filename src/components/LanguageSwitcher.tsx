@@ -5,6 +5,7 @@ import { useLanguage } from '../hooks/useLanguage';
 
 const languages: { code: Language; label: string }[] = [
   { code: 'en', label: 'English' },
+  { code: 'da', label: 'Dansk' },
   { code: 'es', label: 'Español' },
   { code: 'hi', label: 'हिन्दी' },
   { code: 'fr', label: 'Français' },

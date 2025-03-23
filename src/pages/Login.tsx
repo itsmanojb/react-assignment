@@ -22,7 +22,9 @@ export default function Login() {
 
   localStorage.removeItem('token');
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
 
     if (submitted) return;
