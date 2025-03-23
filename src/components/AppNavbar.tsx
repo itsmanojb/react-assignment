@@ -1,13 +1,10 @@
 import { useTranslation } from 'react-i18next';
-//import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-//import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
-//import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LoginRibbon from './LoginRibbon';
@@ -15,32 +12,6 @@ import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
 import SearchField from './Search';
 import { IconPosition } from '../types/Common';
-
-/* const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  display: 'flex',
-  borderRadius: theme.shape.borderRadius * 2.5,
-  border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
-  width: '100%',
-  minWidth: 500,
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0.5),
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginRight: theme.spacing(1),
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  width: '100%',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(0, 2),
-  },
-})); */
 
 export default function AppNavBar() {
   const { t } = useTranslation();
@@ -66,20 +37,13 @@ export default function AppNavBar() {
             <MenuIcon />
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: 'flex', columnGap: 1 }}>
-            {/* <Search>
-              <StyledInputBase
+          <Box sx={{ display: 'flex', columnGap: 1, marginInlineEnd: -10 }}>
+            <Box sx={{ width: 450 }}>
+              <SearchField
                 placeholder={t('ph_text__top_search')}
-                inputProps={{ 'aria-label': 'search' }}
+                iconPosition={IconPosition.END}
               />
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-            </Search> */}
-            <SearchField
-              placeholder={t('ph_text__top_search')}
-              iconPosition={IconPosition.END}
-            />
+            </Box>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

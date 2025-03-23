@@ -11,17 +11,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
   '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    padding: theme.spacing(1),
   },
 }));
-
-/* const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
-  margin: theme.spacing(0, 2, 0, -2),
-})); */
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -29,11 +21,12 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 2.5,
   border: `1px solid ${alpha(theme.palette.divider, 0.15)}`,
   width: '100%',
-  minWidth: 500,
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(0, 1),
   height: '100%',
   position: 'relative',
   pointerEvents: 'none',
@@ -44,7 +37,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 export default function SearchField({
   placeholder,
-  iconPosition = IconPosition.END
+  iconPosition = IconPosition.END,
 }: SearchProps) {
   return (
     <Search>
