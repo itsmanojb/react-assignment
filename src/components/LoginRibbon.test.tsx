@@ -1,8 +1,8 @@
+import { ThemeProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import LoginRibbon from './LoginRibbon';
-import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../config/ThemeConfig';
+import LoginRibbon from './LoginRibbon';
 
 jest.mock(
   '@mui/material/Box',

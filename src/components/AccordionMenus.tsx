@@ -46,7 +46,7 @@ export default function AccordionMenus() {
     },
   ];
   return (
-    <Box width={'100%'}>
+    <Box width={'100%'} paddingInline={2}>
       <Accordion
         defaultExpanded
         sx={{

@@ -1,12 +1,12 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import UsersTable from './UsersTable';
-import { UIContextProvider } from '../contexts/UIContext';
-import useFetch from '../hooks/useFetch';
-import '@testing-library/jest-dom';
 import { ThemeProvider } from '@mui/material/styles';
+import '@testing-library/jest-dom';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { theme } from '../config/ThemeConfig';
+import { AppContextProvider } from '../contexts/AppContext';
+import useFetch from '../hooks/useFetch';
+import UsersTable from './UsersTable';
 
-jest.mock('../hooks/useUIContext', () => ({
+jest.mock('../hooks/useAppContext', () => ({
   __esModule: true,
   default: () => ({
     showInfoPanel: jest.fn(), // mock the function
@@ -32,9 +32,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 
@@ -50,9 +50,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 
@@ -77,9 +77,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 
@@ -111,9 +111,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 
@@ -134,9 +134,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 
@@ -155,9 +155,9 @@ describe('UsersTable', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <UIContextProvider>
+        <AppContextProvider>
           <UsersTable />
-        </UIContextProvider>
+        </AppContextProvider>
       </ThemeProvider>,
     );
 

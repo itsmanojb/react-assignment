@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import AppNavBar from './AppNavbar';
 import { ThemeProvider } from '@mui/material/styles';
-import { theme } from '../config/ThemeConfig';
 import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import { theme } from '../config/ThemeConfig';
+import AppNavBar from './AppNavbar';
 
 jest.mock('@mui/icons-material/Menu', () => () => <div>MenuIcon</div>);
 jest.mock('@mui/icons-material/Notifications', () => () => (
