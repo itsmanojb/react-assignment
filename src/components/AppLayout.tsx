@@ -26,7 +26,6 @@ export default function AppLayout() {
   return (
     <>
       <Box sx={{ paddingInlineStart: `${iconDrawerWidth}px` }}>
-        <CssBaseline />
         <AppNavBar />
         <Drawer
           variant="permanent"

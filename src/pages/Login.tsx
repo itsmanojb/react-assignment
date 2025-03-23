@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TextField, Button, Box, Typography, Container } from '@mui/material';
+import {
+  TextField,
+  Button,
+  Box,
+  Typography,
+  Container,
+  CssBaseline,
+} from '@mui/material';
 import { doFakeLogin } from '../lib/Authentication';
 import { useNavigate } from 'react-router';
 
@@ -31,44 +38,47 @@ export default function Login() {
   };
 
   return (
-    <Container maxWidth="xs">
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        minHeight="100vh"
-      >
-        <Typography variant="h5" gutterBottom>
-          {t('heading__login')}
-        </Typography>
-        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-          <Box display="flex" flexDirection="column" rowGap={2}>
-            <TextField
-              label={t('lbl__login_email')}
-              fullWidth
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <TextField
-              label={t('lbl__login_password')}
-              type="password"
-              fullWidth
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              disableElevation
-              fullWidth
-              disabled={submitted}
-            >
-              {t('btn__login')}
-            </Button>
-          </Box>
-        </form>
-      </Box>
-    </Container>
+    <>
+      <CssBaseline />
+      <Container maxWidth="xs">
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          minHeight="100vh"
+        >
+          <Typography variant="h5" gutterBottom>
+            {t('heading__login')}
+          </Typography>
+          <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+            <Box display="flex" flexDirection="column" rowGap={2}>
+              <TextField
+                label={t('lbl__login_email')}
+                fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <TextField
+                label={t('lbl__login_password')}
+                type="password"
+                fullWidth
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                disableElevation
+                fullWidth
+                disabled={submitted}
+              >
+                {t('btn__login')}
+              </Button>
+            </Box>
+          </form>
+        </Box>
+      </Container>
+    </>
   );
 }

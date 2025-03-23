@@ -1,9 +1,8 @@
-import { ThemeProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { theme } from '../config/ThemeConfig';
 import AppNavBar from './AppNavbar';
 import { LanguageProvider } from '../contexts/LanguageContext';
+import { ThemeContextProvider } from '../contexts/ThemeContext';
 
 jest.mock('@mui/icons-material/Menu', () => () => <div>MenuIcon</div>);
 jest.mock('@mui/icons-material/Notifications', () => () => (
@@ -12,15 +11,26 @@ jest.mock('@mui/icons-material/Notifications', () => () => (
 jest.mock('@mui/icons-material/Settings', () => () => <div>SettingsIcon</div>);
 jest.mock('@mui/icons-material/Search', () => () => <div>SearchIcon</div>);
 
-// TODO: Update exclude tests for language-change
 describe('AppNavBar', () => {
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true,
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+        };
+      }),
+    });
+  });
+
   it('renders the AppNavBar correctly', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <LanguageProvider>
           <AppNavBar />
         </LanguageProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     expect(screen.getByText('MenuIcon')).toBeInTheDocument();
@@ -36,11 +46,11 @@ describe('AppNavBar', () => {
 
   it('should contain a search input with the correct placeholder', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <LanguageProvider>
           <AppNavBar />
         </LanguageProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     const searchInput = screen.getByPlaceholderText(
@@ -51,11 +61,11 @@ describe('AppNavBar', () => {
 
   it('should display notifications badge with the number "17"', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <LanguageProvider>
           <AppNavBar />
         </LanguageProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     const badgeContent = screen.getByText('17');

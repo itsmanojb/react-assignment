@@ -1,8 +1,7 @@
-import { ThemeProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { theme } from '../config/ThemeConfig';
 import { AppContextProvider } from '../contexts/AppContext';
+import { ThemeContextProvider } from '../contexts/ThemeContext';
 import useFetch from '../hooks/useFetch';
 import UsersTable from './UsersTable';
 
@@ -19,6 +18,18 @@ jest.mock('../hooks/useFetch', () => ({
 }));
 
 describe('UsersTable', () => {
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true,
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+        };
+      }),
+    });
+  });
+
   beforeEach(() => {
     (useFetch as jest.Mock).mockReset();
   });
@@ -31,11 +42,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
@@ -49,11 +60,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     expect(screen.getByText(/Error: Failed to fetch/)).toBeInTheDocument();
@@ -76,11 +87,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     await waitFor(() =>
@@ -110,11 +121,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     await waitFor(() =>
@@ -133,11 +144,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     const searchInput = screen.getByPlaceholderText('Search…');
@@ -154,11 +165,11 @@ describe('UsersTable', () => {
     });
 
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <AppContextProvider>
           <UsersTable />
         </AppContextProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     const createUserButton = screen.getByRole('button', {

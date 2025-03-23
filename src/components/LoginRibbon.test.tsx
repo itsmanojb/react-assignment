@@ -1,9 +1,8 @@
-import { ThemeProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { theme } from '../config/ThemeConfig';
 import LoginRibbon from './LoginRibbon';
 import { LanguageProvider } from '../contexts/LanguageContext';
+import { ThemeContextProvider } from '../contexts/ThemeContext';
 import { mockI18n } from '../test-utils/mocki18n';
 
 jest.mock(
@@ -17,13 +16,25 @@ mockI18n({
 });
 
 describe('LoginRibbon', () => {
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true,
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+        };
+      }),
+    });
+  });
+
   it('should render the LoginRibbon component', () => {
     render(
-      <ThemeProvider theme={theme}>
-         <LanguageProvider>
-            <LoginRibbon />
-         </LanguageProvider>
-      </ThemeProvider>,
+      <ThemeContextProvider>
+        <LanguageProvider>
+          <LoginRibbon />
+        </LanguageProvider>
+      </ThemeContextProvider>,
     );
 
     expect(screen.getByText(/User_NAME/i)).toBeInTheDocument();
@@ -31,11 +42,11 @@ describe('LoginRibbon', () => {
 
   it('should display the username "User_NAME" in the ribbon', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <LanguageProvider>
           <LoginRibbon />
         </LanguageProvider>
-      </ThemeProvider>,
+      </ThemeContextProvider>,
     );
 
     expect(screen.getByText(/User_NAME/i)).toBeInTheDocument();

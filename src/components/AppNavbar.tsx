@@ -12,6 +12,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LoginRibbon from './LoginRibbon';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -85,6 +86,7 @@ export default function AppNavBar() {
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: 'flex', columnGap: 1, alignItems: 'center' }}>
+            <ThemeSwitcher />
             <LanguageSwitcher />
             <IconButton size="large" edge="end" color="inherit">
               <SettingsIcon />

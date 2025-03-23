@@ -21,7 +21,7 @@ const ListHeader = ({ text }: { text: string }) => {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: (theme) => theme.spacing(1, 2),
-        backgroundColor: '#eee',
+        backgroundColor: (theme) => theme.palette.background.default,
         border: (theme) => `1px solid ${theme.palette.divider}`,
         borderRadius: 2,
         marginBlock: (theme) => theme.spacing(4, 2),
@@ -64,7 +64,7 @@ const ListItem = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: (theme) => theme.appColors.white,
+          color: (theme) => theme.palette.common.white,
         }}
       >
         {icon}
@@ -84,7 +84,9 @@ export default function InfoPanel() {
   const { selectedUser, selectUser } = useAppContext();
   return (
     <Drawer
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
       variant="temporary"
       anchor="right"
       open={selectedUser !== null}
@@ -92,7 +94,13 @@ export default function InfoPanel() {
     >
       {selectedUser && (
         <>
-          <Box sx={{ width: panelWidth, py: 2 }}>
+          <Box
+            sx={{
+              width: panelWidth,
+              py: 2,
+              backgroundColor: (theme) => theme.palette.background.default,
+            }}
+          >
             <Box
               sx={{
                 display: 'flex',

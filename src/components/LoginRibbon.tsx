@@ -6,7 +6,7 @@ const LoginInfo = styled('div')(({ theme }) => ({
   ...theme.typography.button,
   backgroundColor: theme.appColors.pink,
   borderBottomLeftRadius: theme.shape.borderRadius * 2,
-  color: theme.appColors.white,
+  color: theme.palette.common.white,
   padding: theme.spacing(1, 2),
   minWidth: 250,
   position: 'absolute',
