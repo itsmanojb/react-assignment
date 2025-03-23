@@ -1,6 +1,7 @@
 import { Box, Drawer, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useUIContext } from '../contexts/UIContext';
+//import { useUIContext } from '../contexts/UIContext';
+import useUIContext from '../hooks/useUIContext';
 
 const panelWidth = 400;
 

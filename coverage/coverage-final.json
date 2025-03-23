@@ -1,0 +1,36 @@
+{
+  "/Users/suvadip/Documents/Learning/assignment/react-assignment/src/pages/PageNotFound.tsx": {
+    "path": "/Users/suvadip/Documents/Learning/assignment/react-assignment/src/pages/PageNotFound.tsx",
+    "statementMap": {
+      "0": {
+        "start": { "line": 3, "column": 0 },
+        "end": { "line": 3, "column": 24 }
+      },
+      "1": {
+        "start": { "line": 1, "column": 0 },
+        "end": { "line": 1, "column": 36 }
+      },
+      "2": {
+        "start": { "line": 4, "column": 2 },
+        "end": { "line": 8, "column": 4 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "PageNotFound",
+        "decl": {
+          "start": { "line": 3, "column": 24 },
+          "end": { "line": 3, "column": 36 }
+        },
+        "loc": {
+          "start": { "line": 3, "column": 36 },
+          "end": { "line": 9, "column": 1 }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1 },
+    "f": { "0": 1 },
+    "b": {}
+  }
+}

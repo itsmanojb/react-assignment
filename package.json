@@ -3,10 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "author": {
-    "name": "Manoj Barman",
-    "url": "https://manojbarman.in"
-  },
   "keywords": [
     "react",
     "typescript",
@@ -23,7 +19,8 @@
     "format": "prettier --write .",
     "server:json": "json-server db.json --port 3001 --delay 2000",
     "start": "concurrently \"npm run dev\" \"npm run server:json\" --kill-others",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -53,6 +50,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
     "json-server": "^0.17.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",

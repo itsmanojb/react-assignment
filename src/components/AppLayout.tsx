@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import AppNavBar from './AppNavbar';
 import IconToolbar from './IconToolbar';
 import InfoPanel from './InfoPanel';
-import { AppConfig } from '../utils/AppConfig';
+import { AppConfig } from '../config/AppConfig';
 
 export default function AppLayout() {
   const { iconDrawerWidth, iconDrawerExpandedWidth } = AppConfig;
@@ -31,10 +31,14 @@ export default function AppLayout() {
         <Drawer
           variant="permanent"
           sx={{
-            width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
+            width: drawerOpened
+              ? `${iconDrawerExpandedWidth}px`
+              : iconDrawerWidth,
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: {
-              width: drawerOpened ? `${iconDrawerExpandedWidth}px` : iconDrawerWidth,
+              width: drawerOpened
+                ? `${iconDrawerExpandedWidth}px`
+                : iconDrawerWidth,
             },
           }}
         >

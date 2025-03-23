@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 interface AppState {
   infoPanelShown: boolean;
@@ -28,9 +28,4 @@ const UIContextProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Custom hook to access the context
-const useUIContext = () => {
-  return useContext(UIContext);
-};
-
-export { UIContextProvider, useUIContext };
+export { UIContextProvider, UIContext };

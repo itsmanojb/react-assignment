@@ -6,6 +6,7 @@ import {
   Container,
   IconButton,
   styled,
+  Theme,
 } from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ViewWeekOutlinedIcon from '@mui/icons-material/ViewWeekOutlined';
@@ -20,7 +21,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import InputBase from '@mui/material/InputBase';
 import useFetch from '../hooks/useFetch';
-import { useUIContext } from '../contexts/UIContext';
+import useUIContext from '../hooks/useUIContext';
+//import { useUIContext } from '../contexts/UIContext';
 import { User } from '../types/User';
 
 const Search = styled('div')(({ theme }) => ({
@@ -104,7 +106,7 @@ export default function UsersTable() {
             variant="contained"
             sx={{
               marginInlineStart: 'auto',
-              backgroundColor: (theme) => theme.appColors.blue.main,
+              backgroundColor: (theme: Theme) => theme.appColors.blue.main,
             }}
           >
             Create User
