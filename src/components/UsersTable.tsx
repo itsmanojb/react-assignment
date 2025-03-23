@@ -6,7 +6,6 @@ import {
   Container,
   IconButton,
   styled,
-  Theme,
 } from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ViewWeekOutlinedIcon from '@mui/icons-material/ViewWeekOutlined';
@@ -107,7 +106,7 @@ export default function UsersTable() {
             variant="contained"
             sx={{
               marginInlineStart: 'auto',
-              backgroundColor: (theme: Theme) => theme.appColors.blue.main,
+              backgroundColor: (theme) => theme.appColors.blue.main,
             }}
           >
             {t('btn__create_user')}

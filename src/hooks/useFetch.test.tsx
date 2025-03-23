@@ -3,8 +3,6 @@ import fetchMock from 'jest-fetch-mock';
 import { BASE_URL } from '../config/ApiConfig';
 import useFetch from './useFetch';
 
-//const BASE_URL = import.meta.env.VITE_API_URL || 'http://mockapi.com';
-
 describe('useFetch hook', () => {
   beforeEach(() => {
     fetchMock.resetMocks();

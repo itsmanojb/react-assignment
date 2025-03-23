@@ -28,5 +28,6 @@
   "table_col__lang": "भाषा",
   "table_col__uname_pass": "Username, पासवर्ड",
   "lbl_infopanel__user_info": "User जानकारी",
-  "lbl_infopanel__login_info": "Login जानकारी"
+  "lbl_infopanel__login_info": "Login जानकारी",
+  "lbl_page__not_found": "पृष्ठ नहीं मिला"
 }

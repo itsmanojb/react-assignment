@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { BASE_URL } from '../config/ApiConfig';
 
-//const BASE_URL = import.meta.env.VITE_API_URL;
-
 const useFetch = (url: string) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

@@ -1,8 +1,8 @@
 {
   "lbl__language": "Language",
   "heading__login": "Login To Continue",
-  "lbl__login_email": "Login To Continue",
-  "lbl__login_password": "Login To Continue",
+  "lbl__login_email": "Username",
+  "lbl__login_password": "Password",
   "btn__login": "Login",
   "text__logged_in_user": "Logged in as:",
   "ph_text__top_search": "Search for name, numbers, accounts or free text",
@@ -28,5 +28,6 @@
   "table_col__lang": "Address",
   "table_col__uname_pass": "Address",
   "lbl_infopanel__user_info": "User Information",
-  "lbl_infopanel__login_info": "Login Information"
+  "lbl_infopanel__login_info": "Login Information",
+  "lbl_page__not_found": "Page Not Found"
 }
