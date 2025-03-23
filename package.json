@@ -3,10 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "author": {
-    "name": "Manoj Barman",
-    "url": "https://manojbarman.in"
-  },
   "keywords": [
     "react",
     "typescript",
