@@ -3,10 +3,32 @@ import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Theme {
-    appColors: any;
+    //appColors: any;
+    appColors: {
+      white: string;
+      grey: string;
+      blue: {
+        light: string;
+        main: string;
+        dark: string;
+      },
+      pink: string;
+      teal: string;
+    },
   }
   interface ThemeOptions {
-    appColors?: any;
+    //appColors?: any;
+    appColors?: {
+      white?: string;
+      grey?: string;
+      blue?: {
+        light?: string;
+        main?: string;
+        dark?: string;
+      },
+      pink?: string;
+      teal?: string;
+    },
   }
 }
 

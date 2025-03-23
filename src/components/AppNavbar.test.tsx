@@ -26,18 +26,20 @@ describe('AppNavBar', () => {
     expect(screen.getByText('MenuIcon')).toBeInTheDocument();
     expect(screen.getByText('NotificationsIcon')).toBeInTheDocument();
     expect(screen.getByText('SettingsIcon')).toBeInTheDocument();
-    /* expect(
+    expect(
       screen.getByPlaceholderText(
         'Search for name, numbers, accounts or free text',
       ),
-    ).toBeInTheDocument(); */
+    ).toBeInTheDocument();
     expect(screen.getByText('17')).toBeInTheDocument();
   });
 
-  xit('should contain a search input with the correct placeholder', () => {
+  it('should contain a search input with the correct placeholder', () => {
     render(
       <ThemeProvider theme={theme}>
-        <AppNavBar />
+        <LanguageProvider>
+          <AppNavBar />
+        </LanguageProvider>
       </ThemeProvider>,
     );
 

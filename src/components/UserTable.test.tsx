@@ -9,7 +9,7 @@ import UsersTable from './UsersTable';
 jest.mock('../hooks/useAppContext', () => ({
   __esModule: true,
   default: () => ({
-    showInfoPanel: jest.fn(), // mock the function
+    showInfoPanel: jest.fn(),
   }),
 }));
 
