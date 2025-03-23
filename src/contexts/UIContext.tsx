@@ -28,7 +28,4 @@ const UIContextProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Custom hook to access the context
-
-
 export { UIContextProvider, UIContext };

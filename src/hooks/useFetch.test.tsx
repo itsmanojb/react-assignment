@@ -14,7 +14,8 @@ describe('useFetch hook', () => {
     expect(true).toBeTruthy();
   });
 
-  /* it('should return loading initially', async () => {
+  /*
+  it('should return loading initially', async () => {
     fetchMock.mockResponseOnce(JSON.stringify({}));
     const { result } = renderHook(() => useFetch('test-endpoint'));
 

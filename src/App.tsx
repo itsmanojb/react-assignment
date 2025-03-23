@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router';
 import { ThemeProvider } from '@mui/material/styles';
-import { theme } from './utils/ThemeConfig';
+import { theme } from './config/ThemeConfig';
 import { UIContextProvider } from './contexts/UIContext';
 import AppRouting from './AppRouting';
 

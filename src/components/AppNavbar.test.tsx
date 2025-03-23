@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import AppNavBar from './AppNavbar';
 import { ThemeProvider } from '@mui/material/styles';
-import { theme } from '../utils/ThemeConfig';
+import { theme } from '../config/ThemeConfig';
 import '@testing-library/jest-dom';
 
-// Mock MUI icons used in the component
 jest.mock('@mui/icons-material/Menu', () => () => <div>MenuIcon</div>);
-jest.mock('@mui/icons-material/Notifications', () => () => <div>NotificationsIcon</div>);
+jest.mock('@mui/icons-material/Notifications', () => () => (
+  <div>NotificationsIcon</div>
+));
 jest.mock('@mui/icons-material/Settings', () => () => <div>SettingsIcon</div>);
 jest.mock('@mui/icons-material/Search', () => () => <div>SearchIcon</div>);
 
@@ -15,22 +16,17 @@ describe('AppNavBar', () => {
     render(
       <ThemeProvider theme={theme}>
         <AppNavBar />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
-    // Check if the MenuIcon is rendered
     expect(screen.getByText('MenuIcon')).toBeInTheDocument();
-
-    // Check if the NotificationsIcon is rendered
     expect(screen.getByText('NotificationsIcon')).toBeInTheDocument();
-
-    // Check if the SettingsIcon is rendered
     expect(screen.getByText('SettingsIcon')).toBeInTheDocument();
-
-    // Check if the search input is rendered
-    expect(screen.getByPlaceholderText('Search for name, numbers, accounts or free text')).toBeInTheDocument();
-
-    // Check if the Badge with the number of notifications is rendered
+    expect(
+      screen.getByPlaceholderText(
+        'Search for name, numbers, accounts or free text',
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByText('17')).toBeInTheDocument();
   });
 
@@ -38,10 +34,12 @@ describe('AppNavBar', () => {
     render(
       <ThemeProvider theme={theme}>
         <AppNavBar />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
-    const searchInput = screen.getByPlaceholderText('Search for name, numbers, accounts or free text');
+    const searchInput = screen.getByPlaceholderText(
+      'Search for name, numbers, accounts or free text',
+    );
     expect(searchInput).toBeInTheDocument();
   });
 
@@ -49,7 +47,7 @@ describe('AppNavBar', () => {
     render(
       <ThemeProvider theme={theme}>
         <AppNavBar />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
     const badgeContent = screen.getByText('17');
