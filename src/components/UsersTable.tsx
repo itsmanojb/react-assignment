@@ -23,6 +23,8 @@ import InputBase from '@mui/material/InputBase';
 import useFetch from '../hooks/useFetch';
 import useAppContext from '../hooks/useAppContext';
 import { User } from '../types/User';
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,8 +53,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function UsersTable() {
+  const { t } = useTranslation();
   const { selectUser } = useAppContext();
-
   const { data, loading, error } = useFetch('users');
 
   if (loading) {
@@ -108,7 +110,7 @@ export default function UsersTable() {
               backgroundColor: (theme: Theme) => theme.appColors.blue.main,
             }}
           >
-            Create User
+            {t('btn__create_user')}
           </Button>
         </Box>
       </Box>
@@ -116,11 +118,11 @@ export default function UsersTable() {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Department</TableCell>
-              <TableCell>Employee ID</TableCell>
-              <TableCell>Mobile No.</TableCell>
-              <TableCell>Email</TableCell>
+              <TableCell>{t('table_col__name')}</TableCell>
+              <TableCell>{t('table_col__dept')}</TableCell>
+              <TableCell>{t('table_col__empid')}</TableCell>
+              <TableCell>{t('table_col__mobile')}</TableCell>
+              <TableCell>{t('table_col__email')}</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import { Box, styled } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -31,17 +32,19 @@ const MenuButton = styled(NavLink)(({ theme }) => ({
 }));
 
 export default function AccordionMenus() {
+  const { t } = useTranslation();
+
   const uLinks = [
     {
-      label: 'Users overview',
+      label: t('menu_lbl__users_overview'),
       link: 'users-overview',
     },
     {
-      label: 'Departments',
+      label: t('menu_lbl__users_dept'),
       link: 'departments',
     },
     {
-      label: 'Key templates',
+      label: t('menu_lbl__users_key_templates'),
       link: 'key-templates',
     },
   ];
@@ -77,7 +80,7 @@ export default function AccordionMenus() {
             <AccordionSummary style={{ paddingInline: 0 }}>
               <DashboardOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Overview
+                {t('menu_lbl__overview')}
               </Typography>
             </AccordionSummary>
           </Accordion>
@@ -98,7 +101,7 @@ export default function AccordionMenus() {
             >
               <PeopleAltOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Users
+                {t('menu_lbl__users')}
               </Typography>
             </AccordionSummary>
             <AccordionDetails
@@ -124,7 +127,7 @@ export default function AccordionMenus() {
             <AccordionSummary style={{ paddingInline: 0 }}>
               <FileCopyOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Order &amp; Change History
+                {t('menu_lbl__order_history')}
               </Typography>
             </AccordionSummary>
           </Accordion>
@@ -139,7 +142,7 @@ export default function AccordionMenus() {
             <AccordionSummary style={{ paddingInline: 0 }}>
               <RestorePageOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Multi-change Status
+                {t('menu_lbl__multi_change')}
               </Typography>
             </AccordionSummary>
           </Accordion>
@@ -184,7 +187,7 @@ export default function AccordionMenus() {
             >
               <ManageAccountsOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Number Overview
+                {t('menu_lbl__number_overview')}
               </Typography>
             </AccordionSummary>
             <AccordionDetails
@@ -204,7 +207,7 @@ export default function AccordionMenus() {
             <AccordionSummary style={{ paddingInline: 0 }}>
               <AccessTimeOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Time Management
+                {t('menu_lbl__time_management')}
               </Typography>
             </AccordionSummary>
           </Accordion>
@@ -219,7 +222,7 @@ export default function AccordionMenus() {
             <AccordionSummary style={{ paddingInline: 0 }}>
               <VerifiedOutlinedIcon />
               <Typography component="span" marginInlineStart={2}>
-                Licenses
+                {t('menu_lbl__licenses')}
               </Typography>
             </AccordionSummary>
           </Accordion>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Box, Drawer, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
@@ -79,6 +80,7 @@ const ListItem = ({
 };
 
 export default function InfoPanel() {
+  const { t } = useTranslation();
   const { selectedUser, selectUser } = useAppContext();
   return (
     <Drawer
@@ -110,45 +112,45 @@ export default function InfoPanel() {
             </Box>
 
             <Box px={4} pb={4}>
-              <ListHeader text="User Information" />
+              <ListHeader text={t('lbl_infopanel__user_info')} />
               <ListItem
-                label="Name"
+                label={t('table_col__name')}
                 value={selectedUser.fullName}
                 icon={<PersonOutlineOutlinedIcon />}
               />
               <ListItem
-                label="Email"
+                label={t('table_col__email')}
                 value={selectedUser.email}
                 icon={<EmailOutlinedIcon />}
               />
               <ListItem
-                label="Department"
+                label={t('table_col__dept')}
                 value={selectedUser.department}
                 icon={<BusinessOutlinedIcon />}
               />
               <ListItem
-                label="Position"
+                label={t('table_col__position')}
                 value={selectedUser.designation}
                 icon={<BusinessCenterOutlinedIcon />}
               />
               <ListItem
-                label="Note"
+                label={t('table_col__note')}
                 value={selectedUser.notes}
                 icon={<ModeEditOutlinedIcon />}
               />
               <ListItem
-                label="Address"
+                label={t('table_col__address')}
                 value={selectedUser.address}
                 icon={<HomeOutlinedIcon />}
               />
               <ListItem
-                label="Language"
+                label={t('table_col__lang')}
                 value={selectedUser.language}
                 icon={<TranslateOutlinedIcon />}
               />
-              <ListHeader text="Login Information" />
+              <ListHeader text={t('lbl_infopanel__login_info')} />
               <ListItem
-                label="Username & Password"
+                label={t('table_col__uname_pass')}
                 value={selectedUser.username}
                 icon={<PasswordOutlinedIcon />}
               />
