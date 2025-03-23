@@ -8,7 +8,7 @@ import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlin
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PasswordOutlinedIcon from '@mui/icons-material/PasswordOutlined';
-import { useAppContext } from '../contexts/AppContext';
+import useAppContext from '../hooks/useAppContext';
 
 const panelWidth = 440;
 

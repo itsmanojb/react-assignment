@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { User } from '../types/User';
 
 interface AppState {
@@ -6,7 +6,7 @@ interface AppState {
   selectUser: (u: User | null) => void;
 }
 
-const UIContext = createContext<AppState>({
+const AppContext = createContext<AppState>({
   selectedUser: null,
   selectUser: () => {},
 });
@@ -23,15 +23,10 @@ const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <UIContext.Provider value={{ ...state, selectUser }}>
+    <AppContext.Provider value={{ ...state, selectUser }}>
       {children}
-    </UIContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-// Custom hook to access the context
-const useAppContext = () => {
-  return useContext(UIContext);
-};
-
-export { AppContextProvider, useAppContext };
+export { AppContextProvider, AppContext };
