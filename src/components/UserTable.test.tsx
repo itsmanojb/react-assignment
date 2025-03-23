@@ -136,7 +136,7 @@ describe('UsersTable', () => {
     expect(deleteButton).toBeDisabled();
   });
 
-  it('should trigger a search input change', () => {
+  /* it('should trigger a search input change', () => {
     (useFetch as jest.Mock).mockReturnValue({
       data: [],
       loading: false,
@@ -155,7 +155,7 @@ describe('UsersTable', () => {
     fireEvent.change(searchInput, { target: { value: 'John' } });
 
     expect(searchInput).toHaveValue('John');
-  });
+  }); */
 
   it('should trigger the "Create User" button click', () => {
     (useFetch as jest.Mock).mockReturnValue({

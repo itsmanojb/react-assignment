@@ -39,7 +39,6 @@ describe('useFetch hook', () => {
     expect(result.current.loading).toBe(false);
   });
 
-  
   it('should handle fetch errors', async () => {
     fetchMock.mockRejectOnce(new Error('Fetch failed'));
 
@@ -53,12 +52,15 @@ describe('useFetch hook', () => {
   });
 
   it('should handle non-ok responses', async () => {
-    fetchMock.mockResponseOnce('', { status: 500, statusText: 'Internal Server Error' });
+    fetchMock.mockResponseOnce('', {
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
 
     const { result } = renderHook(() => useFetch('test-endpoint'));
 
     await waitFor(() => expect(result.current.loading).toBe(false));
-    
+
     expect(result.current.error).toBe('Error: 500 Internal Server Error');
     expect(result.current.data).toBeNull();
     expect(result.current.loading).toBe(false);

@@ -1,6 +1,9 @@
-import { LoginResponse } from "../types/Login";
+import { LoginResponse } from '../types/Login';
 
-export function doFakeLogin(username: string, password: string): Promise<LoginResponse> {
+export function doFakeLogin(
+  username: string,
+  password: string,
+): Promise<LoginResponse> {
   if (username === 'admin' && password === 'admin') {
     return new Promise((resolve) => {
       setTimeout(() => {

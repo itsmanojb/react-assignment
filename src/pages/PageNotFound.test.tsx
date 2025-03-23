@@ -13,8 +13,8 @@ describe('PageNotFound Component', () => {
     render(
       <LanguageProvider>
         <PageNotFound />
-      </LanguageProvider>
-  );
+      </LanguageProvider>,
+    );
 
     const dashboardElement = screen.getByTestId('page-not-found');
 

@@ -13,6 +13,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LoginRibbon from './LoginRibbon';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import SearchField from './Search';
+import { IconPosition } from '../types/Common';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -65,7 +67,7 @@ export default function AppNavBar() {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: 'flex', columnGap: 1 }}>
-            <Search>
+            {/* <Search>
               <StyledInputBase
                 placeholder={t('ph_text__top_search')}
                 inputProps={{ 'aria-label': 'search' }}
@@ -73,7 +75,11 @@ export default function AppNavBar() {
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
-            </Search>
+            </Search> */}
+            <SearchField
+              placeholder={t('ph_text__top_search')}
+              iconPosition={IconPosition.END}
+            />
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
