@@ -27,7 +27,7 @@ const MenuButton = styled(NavLink)(({ theme }) => ({
   transition: 'all 0.3s',
   ':hover, &.active': {
     backgroundColor: theme.appColors.blue.main,
-    color: theme.appColors.white,
+    color: theme.palette.common.white,
   },
 }));
 

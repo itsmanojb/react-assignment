@@ -1,38 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Theme {
     //appColors: any;
     appColors: {
-      white: string;
-      grey: string;
       blue: {
         light: string;
         main: string;
         dark: string;
-      },
+      };
       pink: string;
       teal: string;
-    },
+    };
   }
   interface ThemeOptions {
     //appColors?: any;
     appColors?: {
-      white?: string;
-      grey?: string;
       blue?: {
         light?: string;
         main?: string;
         dark?: string;
-      },
+      };
       pink?: string;
       teal?: string;
-    },
+    };
   }
 }
 
-export const theme = createTheme({
+export const themeConfig = {
   components: {
     MuiButtonBase: {
       defaultProps: {
@@ -51,8 +46,6 @@ export const theme = createTheme({
     fontSize: 13,
   },
   appColors: {
-    white: '#ffffff',
-    grey: '#fbfbfb',
     blue: {
       light: '#1e3fcd',
       main: '#1333bb',
@@ -61,4 +54,4 @@ export const theme = createTheme({
     pink: '#db3655',
     teal: '#52bca6',
   },
-});
+};

@@ -125,7 +125,7 @@ export default function IconToolbar({ drawer, onDrawerToggle }: Props) {
       <Box
         sx={{
           display: 'flex',
-          backgroundColor: (theme) => theme.appColors.grey,
+          backgroundColor: (theme) => theme.palette.background.default,
           height: '100%',
         }}
       >
