@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { styled } from '@mui/material/styles';
 
 const LoginInfo = styled('div')(({ theme }) => ({
@@ -20,6 +21,7 @@ const Ribbon = styled('div')(({ theme }) => ({
 }));
 
 export default function LoginRibbon() {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -32,7 +34,7 @@ export default function LoginRibbon() {
     >
       <Ribbon />
       <LoginInfo>
-        Logged in as : <span>User_NAME</span>{' '}
+        {t('text__logged_in_user')} <span>User_NAME</span>{' '}
       </LoginInfo>
     </Box>
   );

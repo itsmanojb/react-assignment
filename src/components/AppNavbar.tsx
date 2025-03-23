@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,6 +11,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LoginRibbon from './LoginRibbon';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -38,6 +40,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AppNavBar() {
+  const { t } = useTranslation();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -62,7 +66,7 @@ export default function AppNavBar() {
           <Box sx={{ display: 'flex', columnGap: 1 }}>
             <Search>
               <StyledInputBase
-                placeholder="Search for name, numbers, accounts or free text"
+                placeholder={t('ph_text__top_search')}
                 inputProps={{ 'aria-label': 'search' }}
               />
               <SearchIconWrapper>
@@ -80,9 +84,12 @@ export default function AppNavBar() {
             </IconButton>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <IconButton size="large" edge="end" color="inherit">
-            <SettingsIcon />
-          </IconButton>
+          <Box sx={{ display: 'flex', columnGap: 1, alignItems: 'center' }}>
+            <LanguageSwitcher />
+            <IconButton size="large" edge="end" color="inherit">
+              <SettingsIcon />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <LoginRibbon />
